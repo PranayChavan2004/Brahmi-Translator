@@ -1,0 +1,12 @@
+tensorflow>=2.10.0
+keras
+opencv-python
+scikit-image
+numpy
+matplotlib
+Pillow
+plantcv
+django
+jupyter
+ipykernel
+scikit-learn
