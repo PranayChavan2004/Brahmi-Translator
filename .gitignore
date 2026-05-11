@@ -1,0 +1,42 @@
+# Virtual Environment
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# Large AI Models
+*.h5
+*.keras
+*.pth
+*.pt
+*.ckpt
+*.pb
+
+# Large Datasets
+dataset/
+datasets/
+data/
+
+# TensorFlow Logs
+logs/
+runs/
+
+# Build Files
+build/
+dist/
+
+# IDE Files
+.idea/
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
