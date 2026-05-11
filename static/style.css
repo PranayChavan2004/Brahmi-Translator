@@ -1,0 +1,337 @@
+body{
+
+font-family: Arial, Helvetica, sans-serif;
+
+background-image: url("/static/img1.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+margin:0;
+padding:0;
+
+}
+
+
+/* Dark overlay */
+
+.overlay{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.45);
+
+z-index:-1;
+
+}
+
+
+/* Container */
+
+.container{
+
+width:90%;
+max-width:900px;
+
+margin:auto;
+padding:40px;
+
+}
+
+
+/* Title */
+
+.main-title{
+
+text-align:center;
+
+color:#fff3d6;
+
+font-size:36px;
+
+margin-bottom:40px;
+
+letter-spacing:1px;
+
+text-shadow:2px 2px 8px black;
+
+}
+
+
+/* Cards */
+
+.card{
+
+background:rgba(255,244,214,0.85);
+
+backdrop-filter: blur(8px);
+
+padding:25px;
+
+margin-bottom:25px;
+
+border-radius:14px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+border:1px solid rgba(120,80,40,0.4);
+
+transition:0.3s;
+
+animation:fadeIn 0.8s ease;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+color:#5a3b1e;
+
+}
+
+
+/* Forms */
+
+.form{
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+}
+
+
+/* Inputs */
+
+input[type="text"]{
+
+padding:12px;
+
+border-radius:10px;
+
+border:1px solid #b08d57;
+
+font-size:16px;
+
+background:#fffaf0;
+
+transition:0.3s;
+
+}
+
+
+input:focus{
+
+outline:none;
+
+border:1px solid #8b5e34;
+
+box-shadow:0 0 8px rgba(139,94,52,0.4);
+
+}
+
+
+/* Upload box */
+
+.upload-box{
+
+border:2px dashed #8b5e34;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+cursor:pointer;
+
+background:#fffaf0;
+
+transition:0.3s;
+
+}
+
+
+.upload-box:hover{
+
+background:#f6e7c1;
+
+}
+
+
+/* Buttons */
+
+button{
+
+background:linear-gradient(135deg,#8b5e34,#c49a6c);
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:10px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+font-weight:600;
+
+}
+
+
+button:hover{
+
+background:linear-gradient(135deg,#6b4423,#a67c52);
+
+transform:scale(1.03);
+
+box-shadow:0 6px 18px rgba(0,0,0,0.4);
+
+}
+
+
+/* Output */
+
+.output{
+
+margin-top:15px;
+
+padding:14px;
+
+background:rgba(255,248,220,0.95);
+
+border-radius:10px;
+
+font-size:18px;
+
+color:#5a3b1e;
+
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+
+min-height:20px;
+
+text-align:center;
+
+transition:0.3s;
+
+animation:fadeIn 0.4s ease;
+
+}
+
+
+.red{
+
+color:#c0392b;
+
+}
+
+
+/* Result */
+
+.result-card{
+
+background:rgba(255,244,214,0.9);
+
+padding:20px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+text-align:center;
+
+animation:fadeIn 0.8s ease;
+
+}
+
+
+/* Image preview */
+
+.preview{
+
+display:none;
+
+width:200px;
+
+margin:auto;
+
+border-radius:10px;
+
+margin-top:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+
+/* Animation */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.container{
+
+width:95%;
+padding:20px;
+
+}
+
+.main-title{
+
+font-size:28px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+button{
+
+font-size:15px;
+
+}
+
+}
