@@ -1,0 +1,229 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brahmi Script Recognition System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <h1 class="main-title">Brahmi Script Recognition System</h1>
+
+
+        <div class="card">
+
+            <h2>Convert Devanagari → Brahmi</h2>
+
+            <form method="POST" class="form">
+
+                <input type="text" name="dev_text" placeholder="Enter Devanagari text">
+
+                <button type="submit">Convert</button>
+
+            </form>
+
+            {% if brahmi_output %}
+            <p class="output">{{brahmi_output}}</p>
+            {% endif %}
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Convert Brahmi → Devanagari</h2>
+
+            <form method="POST" class="form">
+
+                <input type="text" name="brahmi_text" placeholder="Enter Brahmi text">
+
+                <button type="submit">Convert</button>
+
+            </form>
+
+            {% if dev_output %}
+            <p class="output red">{{dev_output}}</p>
+            {% endif %}
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Brahmi Image Converion and Prediction</h2>
+
+            <form method="POST" enctype="multipart/form-data" class="form">
+
+                <div class="upload-box">
+
+                    <input type="file" id="imageInput" name="image_file" accept="image/*" capture="environment">
+
+                    <p>Drag & Drop Image or Click to Upload</p>
+
+                </div>
+
+                <img id="preview" class="preview" />
+
+                <button type="submit">Predict</button>
+
+            </form>
+
+        </div>
+
+        {% if ocr_output %}
+        <div class="result-card">
+
+            <h3>Prediction Result</h3>
+
+            <p>{{ocr_output}}</p>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+
+    <script>
+
+        const input = document.getElementById("imageInput");
+        const preview = document.getElementById("preview");
+
+        input.onchange = evt => {
+
+            const [file] = input.files;
+
+            if (file) {
+
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brahmi Script Recognition System</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    .label-pill {
+      display: inline-block;
+      background: #f0e8d0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin: 2px 3px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    .deva-text {
+      font-size: 2.4rem;
+      font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', sans-serif;
+      color: #2c1a00;
+      letter-spacing: 0.1em;
+      margin-top: 10px;
+    }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #9a7a40;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 12px 0 4px;
+    }
+    .arrow { text-align:center; font-size:1.4rem; color:#c8a84b; margin:6px 0; }
+  </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+  <h1 class="main-title">Brahmi Script Recognition System</h1>
+
+  <!-- Devanagari → Brahmi -->
+  <div class="card">
+    <h2>Convert Devanagari → Brahmi</h2>
+    <form method="POST" class="form">
+      <input type="text" name="dev_text" placeholder="Enter Devanagari text">
+      <button type="submit">Convert</button>
+    </form>
+    {% if brahmi_output %}
+      <p class="output">{{ brahmi_output }}</p>
+    {% endif %}
+  </div>
+
+  <!-- Brahmi Unicode → Devanagari -->
+  <div class="card">
+    <h2>Convert Brahmi → Devanagari</h2>
+    <form method="POST" class="form">
+      <input type="text" name="brahmi_text" placeholder="Enter Brahmi text">
+      <button type="submit">Convert</button>
+    </form>
+    {% if dev_output %}
+      <p class="output red">{{ dev_output }}</p>
+    {% endif %}
+  </div>
+
+  <!-- Image OCR -->
+  <div class="card">
+    <h2>Brahmi Image Recognition</h2>
+    <form method="POST" enctype="multipart/form-data" class="form">
+      <div class="upload-box">
+        <input type="file" id="imageInput" name="image_file"
+               accept="image/*" capture="environment">
+        <p>Drag & Drop Image or Click to Upload</p>
+      </div>
+      <img id="preview" class="preview"/>
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+
+  {% if ocr_output %}
+  <div class="result-card">
+    <h3>Prediction Result</h3>
+
+    <div class="section-label">Brahmi Labels</div>
+    <div>
+      {% for lbl in ocr_labels %}
+        <span class="label-pill">{{ lbl }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="section-label">Devanagari (हिन्दी)</div>
+    <div class="deva-text">{{ devanagari_output }}</div>
+  </div>
+  {% endif %}
+
+</div>
+
+<script>
+  const input = document.getElementById("imageInput");
+  const preview = document.getElementById("preview");
+  input.onchange = () => {
+    const [file] = input.files;
+    if (file) { preview.src = URL.createObjectURL(file); preview.style.display = "block"; }
+  };
+</script>
+</body>
+</html>
