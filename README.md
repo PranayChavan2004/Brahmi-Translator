@@ -223,7 +223,7 @@ final_bramhi/
 # 📦 Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/brahmi-translation-system.git
+git clone https://github.com/PranayChavan2004/brahmi-translation-system.git
 ```
 
 ```bash
