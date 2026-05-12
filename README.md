@@ -36,6 +36,14 @@ The platform was developed as a research-oriented heritage preservation system u
 
 ---
 
+# 📦 Full Project Download
+
+Due to GitHub size limitations, the complete project including trained models and datasets is available through Google Drive.
+
+[Google Drive - Full Brahmi Project](https://drive.google.com/drive/folders/1jHSGaGns544CBPvVRvDgW1iuRKo1UDbt?utm_source=chatgpt.com)
+
+---
+
 # 🏠 Application Home Page
 
 ![Home Page](./screenshots/home.png)
@@ -305,42 +313,5 @@ This project contributes to research areas including
 - Deep learning-based damaged text restoration
 - AI-assisted cultural heritage analysis
 - Ancient script recognition systems
-
----
-
-# 📦 Full Project Download
-
-Due to GitHub size limitations, the complete project including trained models and datasets is available through Google Drive.
-
-[Google Drive - Full Brahmi Project](https://drive.google.com/drive/folders/1jHSGaGns544CBPvVRvDgW1iuRKo1UDbt?utm_source=chatgpt.com)
-
----
-
-# ⚠️ GitHub Repository Note
-
-The complete project size exceeds
-
-```text
-5GB+
-```
-
-For efficient repository management
-
-## Uploaded to GitHub
-
-- Source code
-- Flask application
-- OCR pipeline
-- Translation modules
-- Screenshots
-- README
-- Requirements file
-
-## Shared through Google Drive
-
-- Full datasets
-- Trained deep learning models
-- Checkpoints
-- Large preprocessing outputs
 
 ---
