@@ -45,7 +45,7 @@ def connectedcomp(img , blurring=5):
             componentMask = (label_ids == i).astype("uint8") * 255
             output = cv2.bitwise_or(output, componentMask)
 
-    # ✅ Replace cv2_imshow() with plt.imshow()
+    # Replace cv2_imshow() with plt.imshow()
     plt.figure(figsize=(6, 6))
     plt.imshow(output, cmap='gray')
     plt.axis("off")
