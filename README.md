@@ -40,7 +40,7 @@ The platform was developed as a research-oriented heritage preservation system u
 
 Due to GitHub size limitations, the complete project including trained models and datasets is available through Google Drive.
 
-[Google Drive - Full Brahmi Project](https://drive.google.com/drive/folders/1jHSGaGns544CBPvVRvDgW1iuRKo1UDbt?utm_source=chatgpt.com)
+[Google Drive - Full Brahmi Project](https://drive.google.com/drive/folders/1km2pnUuj3RqCbFDDajMgKNEPdfHN_vQm?usp=sharing)
 
 ---
 
