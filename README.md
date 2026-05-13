@@ -93,8 +93,6 @@ Pipeline:
 - TensorFlow
 - Keras
 - OpenCV
-- scikit-image
-- PlantCV
 - NumPy
 
 ### Frontend
@@ -102,7 +100,6 @@ Pipeline:
 - HTML5
 - CSS3
 - JavaScript
-- Jinja2 Templates
 
 ### Model
 
@@ -130,25 +127,6 @@ final_bramhi/
 |-- models/
     |-- MODEL/
         |-- model.h5        # Trained CNN model (287 classes)
-```
-
----
-
-## Model Architecture
-
-```
-Input (32x32x1)
--> Conv2D (60 filters, 5x5, ReLU)
--> Conv2D (60 filters, 5x5, ReLU)
--> MaxPooling2D (2x2)
--> Conv2D (30 filters, 3x3, ReLU)
--> Conv2D (30 filters, 3x3, ReLU)
--> MaxPooling2D (2x2)
--> Dropout (0.5)
--> Flatten
--> Dense (500, ReLU)
--> Dropout (0.5)
--> Dense (287, Softmax)
 ```
 
 ---
