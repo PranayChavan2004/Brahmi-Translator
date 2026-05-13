@@ -226,4 +226,4 @@ http://127.0.0.1:5000
 - End-to-end Brahmi inscription digitization
 - Connected component based noise removal for historical images
 - Skeletonization and pruning for character standardization
-- Custom CNN trained on 60,000 handwritten Brahmi characters
+- Custom CNN trained on 60,000 Brahmi characters
