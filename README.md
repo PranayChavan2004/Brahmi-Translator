@@ -1,6 +1,6 @@
 # Brahmi Script Recognition System
 
-An AI-powered deep learning system designed for ancient Brahmi script translation and inscription analysis Project focused on cultural heritage digitization and intelligent inscription processing
+An Deep learning system designed for ancient Brahmi script translation and inscription analysis Project focused on cultural heritage digitization and intelligent inscription processing
 
 ---
 
