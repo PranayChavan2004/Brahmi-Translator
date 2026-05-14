@@ -7,10 +7,7 @@ An Deep learning system designed for ancient Brahmi script translation and inscr
 ## Project Overview
 
 Ancient Brahmi inscriptions are difficult to interpret manually due to:
-
-- Damaged or weathered stone surfaces
 - Low-quality inscription images
-- Faded or incomplete characters
 - Limited digitized datasets
 
 This system provides an end-to-end pipeline to:
@@ -54,18 +51,6 @@ Reverse conversion from Brahmi Unicode characters to Devanagari using an auto-in
 ### Module 3 — Brahmi Image Recognition
 
 Analyzes uploaded Brahmi inscription images and predicts the Brahmi characters and their Devanagari equivalents using a trained CNN model.
-
-Pipeline:
-
-1. Image load and 5x resize
-2. Connected Component Analysis — noise removal, blobs under 50px filtered
-3. Invert check — auto-corrects dark background images
-4. Line Segmentation — horizontal morphological dilation and contour detection
-5. Character Segmentation — vertical projection histogram method
-6. Skeletonization — reduces characters to single-pixel-width strokes
-7. Pruning — removes dangling branches using PlantCV
-8. CNN Prediction — 32x32 grayscale input, 287 Brahmi classes output
-9. Label to Devanagari mapping
 
 ![Image Analysis](./screenshots/image.png)
 
