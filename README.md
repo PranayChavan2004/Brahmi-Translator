@@ -90,31 +90,6 @@ Analyzes uploaded Brahmi inscription images through a complete computer vision a
 
 ---
 
-## Model Architecture
-
-```
-Input Layer        32 x 32 x 1 grayscale image
-Conv2D Layer 1     60 filters  5x5 kernel  ReLU activation
-Conv2D Layer 2     60 filters  5x5 kernel  ReLU activation
-MaxPooling2D       2x2 pool size
-Conv2D Layer 3     30 filters  3x3 kernel  ReLU activation
-Conv2D Layer 4     30 filters  3x3 kernel  ReLU activation
-MaxPooling2D       2x2 pool size
-Dropout            rate 0.5
-Flatten            480 values
-Dense Layer        500 neurons  ReLU activation
-Dropout            rate 0.5
-Output Dense       287 neurons  Softmax activation
-Output             287 class probabilities
-```
-
-- Optimizer: Adam with learning rate 0.001
-- Loss Function: Categorical Crossentropy
-- Training Iterations: 30025
-- Model Format: HDF5 (.h5)
-
----
-
 ## Project Structure
 
 ```
@@ -141,62 +116,7 @@ final_bramhi/
         |-- model.h5
 ```
 
-### File Descriptions
 
-| File | Description |
-|------|-------------|
-| app.py | Flask server — handles all HTTP routes and request processing |
-| final.py | Complete OCR pipeline — contains run_ocr() main function |
-| index.html | Main UI — three module forms with Jinja2 template tags |
-| style.css | Stylesheet with Devanagari font and card layout |
-| model.h5 | Trained CNN model with 287 Brahmi character classes |
-
----
-
-## Key Functions
-
-### app.py Functions
-
-| Function | Purpose |
-|----------|---------|
-| index() | Main Flask route handling all three modules via POST |
-| label_to_dev(label) | Converts single Brahmi label string to Devanagari character |
-| labels_to_devanagari(labels) | Converts full list of labels to Devanagari output string |
-
-### final.py Functions
-
-| Function | Purpose |
-|----------|---------|
-| run_ocr(image_path) | Main OCR pipeline entry point called from app.py |
-| connectedcomp(img) | Grayscale, blur, threshold, noise removal via connected components |
-| check_invert(img) | Auto detects and corrects dark or light background orientation |
-| lineseg(img) | Segments text lines using horizontal morphological dilation |
-| charseg(img) | Segments individual characters using vertical projection histogram |
-| skeletonize1(img) | Zhang-Suen iterative erosion to single pixel width skeleton |
-| prune(skeleton) | Removes dangling branches from skeleton using PlantCV |
-| predict_chars(images) | Runs CNN model prediction on batch of character images |
-| line_thinning(img) | Slight character thickening before segmentation |
-
----
-
-## How Frontend and Backend Connect
-
-This project uses Flask server-side rendering. There is no REST API and no JSON communication.
-
-```
-Browser sends HTML form POST request
-Flask receives request in app.py
-app.py calls run_ocr() from final.py
-final.py runs preprocessing pipeline
-final.py loads model.h5 and predicts
-final.py returns list of labels to app.py
-app.py converts labels to Devanagari text
-app.py calls render_template with results
-Jinja2 injects Python data into index.html
-Browser receives and displays complete HTML
-```
-
----
 
 ## Installation and Setup
 
