@@ -161,12 +161,6 @@ pip install flask tensorflow opencv-python scikit-image plantcv numpy pillow
 python app.py
 ```
 
-### Step 5 Open Browser
-
-```
-http://127.0.0.1:5000
-```
-
 ---
 
 ## Full Project Download
