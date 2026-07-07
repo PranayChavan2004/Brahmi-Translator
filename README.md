@@ -1,7 +1,6 @@
 # Brahmi Script Recognition System
 
-An AI-powered web application for ancient Brahmi script translation and inscription analysis. Built as a final year B.E. Computer Engineering project at JSPM's Jayawantrao Sawant College of Engineering, Pune.
-
+An AI-powered web application for ancient Brahmi script translation and inscription analysis. 
 ---
 
 ## Project Overview
